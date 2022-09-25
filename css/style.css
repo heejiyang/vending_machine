@@ -50,27 +50,28 @@ body {
   gap: 12px;
 }
 .type {
+  position: relative;
   display: block;
   border-radius: 10px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 11px 12px 9px;
 }
-figure.origin, .green {
+.type:nth-child(1),
+.type:nth-child(5){
   outline: 3px solid #6327FE;
 }
-figure.violet::after {
-  /* display: none; */
+.type:nth-child(2)::after {
   content: '';
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  width: 94px;
-  height: 130px;
+  width: 100%;
+  height: 100%;
   border: none;
   border-radius: 10px;
   background: url(/img/soldout.png) center no-repeat;
-  background-size: 70%;
   background-color: rgba(0, 0, 0, 0.8);
 }
 .type img {
@@ -231,4 +232,43 @@ button.btn_get {
   text-align: right;
   font-size: 1.2rem;
   margin-top: 6px;
+}
+@media screen and (max-width: 767px){
+  .wrapper {
+    background-color: #fff;
+  }
+  .logo {
+    margin-bottom: 18px;
+  }
+  .logo_cola {
+    width: 166px;
+    height: 78px;
+  }
+  /* main */
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .drink {
+    margin-right: 0;
+    height: 535px;
+    padding: 31px 27px 0 27px;
+  }
+  .pocket li {
+    border: 1px solid #bdbdbd;
+  }
+  /* 2. 획득 음료 */
+  .pick {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .money {
+    width: 306px;
+    height: 32px;
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 14px;
+  }
 }
