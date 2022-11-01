@@ -1,4 +1,7 @@
 body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #EAE8FE;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
 }
@@ -11,22 +14,24 @@ body {
   clip-path: inset(0 0 0 0);
 }
 /* header */
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  background-color: #EAE8FE;
-}
 .logo {
+  width: 100%;
+  text-align: center;
   margin-bottom: 68px;
 }
-.logo_cola {
+
+.logo-cola {
   width: 386px;
   height: 180px;
   display: flex;
   margin: 0 auto;
 }
+.logo-cola img {
+  width: 100%;
+}
+
 /* main */
-.content {
+.wrap {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -35,33 +40,39 @@ body {
 /* 1. 콜라 종류 */
 .drink {
   width: 360px;
-  height: 545px;
   background-color: #ffffff;
   margin-right: 18px;
   display: flex;
   flex-direction: column;
   padding: 31px 27px 28px 27px;
 }
-.cola_type {
+.item-list {
   display: grid;
   grid-template-columns: 94px 94px 94px;
   grid-template-rows: 130px 130px;
   column-gap: 12px;
   gap: 12px;
 }
-.type {
+.item-list .item {
+  width: 94px;
+  text-align: center;
   position: relative;
   display: block;
   border-radius: 10px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  padding: 11px 12px 9px;
+  /* padding: 11px 12px 9px; */
+  cursor: pointer;
 }
-.type:nth-child(1),
-.type:nth-child(5){
+
+.item-list .item.active {
   outline: 3px solid #6327FE;
 }
-.type:nth-child(2)::after {
+
+.item-list .item.soldout {
+  outline: none;
+}
+
+.item-list .item.soldout::after {
   content: '';
   display: block;
   position: absolute;
@@ -69,61 +80,85 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 10px;
-  background: url(/img/soldout.png) center no-repeat;
-  background-color: rgba(0, 0, 0, 0.8);
+  /* border: none; */
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8) url(/img/soldout.png) center/70% no-repeat;
 }
-.type img {
+
+.item-list .item .img-item {
   width: 36px;
-  height: 65px;
+  margin-top: 11px;
 }
-.type p {
+.item-list .item .txt-item {
   margin-top: 6px;
-  margin-bottom: 7px;
-  font-size: 0.9rem;
-  font-weight: 400;
+  /* margin-bottom: 7px; */
+  /* font-size: 0.9rem; */
+  /* font-weight: 400; */
 }
-.type button {
-  width: 70px;
-  height: 22px;
+.item-list .item .btn-item {
+  /* width: 70px; */
+  /* height: 22px; */
   font-size: 1.2rem;
+  line-height: 12px;
+  margin: 7px 11px 9px 13px;
+  padding: 5px 16px 5px 15px;
   border-radius: 50px;
   background-color: #6327FE;
   color: #ffffff;
 }
-.cola_select {
+
+/* 왼쪽 하단부분 */
+.item-select {
+  margin-top: 20px;
   display: grid;
+  flex-wrap: wrap;
   grid-template-columns: 200px 94px;
   grid-template-rows: 32px 32px 106px;
   column-gap: 11px;
   gap: 12px;
-  margin-top: 20px;
-}
-.select {
   background-color: #EAE8FE;
   border-radius: 5px;
 }
-.txt_remain {
-  width: 100%;
+
+.item-select .txt-remain {
+  width: 200px;
   display: flex;
   justify-content: space-between;
-  padding: 6px 10px 7px;
-  align-items: center;
+  padding: 6px 10px;
+  /* align-items: center; */
   font-size: 1.4rem;
+  line-height: 20px;
+  background-color: #eae8fe;
 }
-.cola_select button {
+.item-select button,
+.pick button {
+  width: 94px;
   font-size: 1.3rem;
-  background-color: #ffffff;
+  line-height: 19px;
+  padding: 6px 9px 7px 10px;
+  /* background-color: #ffffff; */
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
-.input {
+.item-select input {
+  width: 200px;
+  padding: 6px 6px 5px;
+  border: 1px solid #bdbdbd;
+  line-height: 19px;
+  box-sizing: border-box;
+}
+.pocket {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+.item-select .pocket-list {
   border-style: none;
   padding: 6px 131px 8px 6px;
   font-size: 13px;
   background-color: #ffffff;
   border: 1px solid #bdbdbd;
 }
+
 input::placeholder{
   color:#bdbdbd;
   text-align: center;
@@ -132,27 +167,27 @@ input::placeholder{
   overflow: auto;
   border: 1px solid #bdbdbd;
 }
-.cola-select::-webkit-scrollbar,
+.pocket-list::-webkit-scrollbar,
 .pocket::-webkit-scrollbar {
   width: 4px;
 }
-.cola-select::-webkit-scrollbar-thumb,
+.pocket-list::-webkit-scrollbar-thumb,
 .pocket::-webkit-scrollbar-thumb {
   height: 79px;
   background-clip: padding-box;
   background-color:#fff;
   border-radius: 50px;
 }
-.cola-select::-webkit-scrollbar-track,
+.pocket-list::-webkit-scrollbar-track,
 .pocket::-webkit-scrollbar-track {
   background-color: #EAE8FE;
 }
-.pocket ul {
+.pocket-list {
   flex-direction: column;
   margin: 12px 10px 0 12px;
   padding-right: 4px;
 }
-.pocket li {
+/* .pocket li {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -161,17 +196,17 @@ input::placeholder{
   margin-bottom: 6px;
   background-color: #ffffff;
   border-radius: 5px;
-}
-.pocket img {
+} */
+/* .pocket img {
   width: 18px;
   height: 33px;
-}
-.list_name {
+} */
+/* .list_name {
   font-size: 0.9rem;
   margin-left: 10px;
   margin-right: auto;
-}
-.list_num {
+} */
+/* .list_num {
   width: 30px;
   height: 30px;
   display: flex;
@@ -180,72 +215,104 @@ input::placeholder{
   font-size: 1.4rem;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
-}
-button.btn_get {
+} */
+.pocket .btn-get {
+  height: 106px;
   background-color: #6327FE;
   color: #ffffff;
 }
+
 /* 2. 획득 음료 */
-.pick {
+/* .pick {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.money {
+} */
+.pick .money {
   width: 360px;
-  height: 50px;
-  display: flex;
+  /* height: 50px; */
+  /* display: flex; */
   background-color: #ffffff;
   padding: 9px 27px;
-  margin-left: auto;
+  /* margin-left: auto; */
   margin-bottom: 20px;
 }
-.txt_money {
-  width: 100%;
+.pick .money p {
+  /* width: 100%; */
   background-color: #eae8fe;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
-  align-items: center;
+  /* align-items: center; */
   font-size: 1.4rem;
-  padding: 10px;
+  line-height: 20px;
+  padding: 6px 10px;
 }
-.get_list {
-  width: 360px;
-  height: 475px;
-  display: flex;
-  flex-direction: column;
-  padding: 26px 27px;
-  background-color: #ffffff;
-}
-.get_drink {
-  text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 16px;
+.pick .money .txt-money {
   font-weight: 700;
 }
-.get.pocket {
+
+.pick .get-list-box {
   height: 475px;
+  background-color: #ffffff;
 }
-.get_total {
+.pick .get-list-box .txt-get-drink {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 1.4rem;
+  line-height: 20px;
+  font-weight: 700;
+}
+.pick .get-list-box .item-get-result-list {
+  width: 306px;
+  height: 364px;
+  margin: 13px auto 0;
+  background-color: #eae8fe;
+  padding: 12px 0 0 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+.pick .get-list-box .item-get-result-list li {
+  width: 276px;
+  height: 46px;
+  padding: 6px 8px 7px 10px;
+  background-color: white;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.pick .get-list-box .item-get-result-list li img {
+  width: 18px;
+  border-radius: 0;
+  margin-right: 10px;
+}
+.pick .get-list-box .item-get-result-list li:last-child {
+  margin-bottom: 0px;
+}
+.pick .get-total {
+  width: 306px;
+  margin: 6px auto 0;
   text-align: right;
+  font-weight: 500;
   font-size: 1.2rem;
-  margin-top: 6px;
+  line-height: 17px;
 }
 @media screen and (max-width: 767px){
-  .wrapper {
+  body {
     background-color: #fff;
   }
   .logo {
     margin-bottom: 18px;
   }
-  .logo_cola {
+  .logo-cola {
     width: 166px;
     height: 78px;
   }
   /* main */
-  .content {
+  .wrap {
     flex-direction: column;
     align-items: center;
   }
