@@ -3,8 +3,6 @@ const getItemList = document.querySelector(".btn-get");
 const cartItems = [];
 console.log(cartItems);
 
-
-
 const setCartItem = (item, id) => {
     const src = item.querySelector("img").getAttribute("src");
     const title = item.querySelector(".txt-item").textContent;
