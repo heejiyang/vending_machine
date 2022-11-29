@@ -84,7 +84,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -93,6 +94,7 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -107,17 +109,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -125,15 +131,18 @@ q:after {
   content: "";
   content: none;
 }
+
 html {
   font-size: 10px;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 button {
   background: none;
   color: inherit;
@@ -143,9 +152,11 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
 img {
   vertical-align: top;
 }
+
 .txt-hide {
   position: absolute;
   overflow: hidden;

@@ -10,11 +10,13 @@ p {
   text-align: center;
   margin-bottom: 68px;
 }
+
 .logo .logo-cola {
   width: 386px;
   height: 180px;
   margin: 0 auto;
 }
+
 .logo .logo-cola img {
   width: 100%;
 }
@@ -27,38 +29,43 @@ p {
 }
 .wrap .drink {
   width: 360px;
+  height: 545px;
   padding: 31px 27px 28px;
   background-color: #ffffff;
 }
 
 /* 1. drink section 콜라 종류 */
 /* 왼쪽 윗부분 */
-.item-list {
-  /* display: grid;
+.list-item {
+  display: grid;
   grid-template-columns: 94px 94px 94px;
   grid-template-rows: 130px 130px;
-  column-gap: 12px; */
+  column-gap: 12px;
   flex-wrap: wrap;
   display: flex;
   gap: 12px;
 }
-.item-list .item {
+
+.list-item .item {
   width: 94px;
   cursor: pointer;
   position: relative;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  /* display: block; */
-  /* padding: 11px 12px 9px; */
+  display: block;
+  padding: 11px 12px 9px;
 }
-.item-list .item.active {
+
+.list-item .item.active {
   outline: 3px solid #6327FE;
 }
-.item-list .item.soldout {
+
+.list-item .item.soldout {
   outline: none;
 }
-.item-list .item.soldout::after {
+
+.list-item .item.soldout::after {
   content: "";
   display: block;
   position: absolute;
@@ -67,20 +74,22 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.8) url(/img/soldout.png) center/70% no-repeat;
-  /* border: none; */
+  background: rgba(0, 0, 0, 0.8) url(../img/soldout.png) center/70% no-repeat;
+  border: none;
 }
 
-.item-list .item .img-item {
+.list-item .item .img-item {
   width: 36px;
-  margin-top: 11px;
 }
-.item-list .item .txt-item {
-  margin-top: 6px;
+
+.list-item .item .txt-item {
+  font-size: 1rem;
+  transform: scale(0.9);
+  margin: 6px 0 7px;
 }
-.item-list .item .price-item {
-  margin: 7px 11px 9px 13px;
-  padding: 5px 16px 5px 15px;
+
+.list-item .item .price-item {
+  padding: 5px 15px;
   color: #ffffff;
   font-size: 1.2rem;
   line-height: 12px;
@@ -89,20 +98,16 @@ p {
 }
 
 /* 왼쪽 하단부분 */
-.item-select {
+.inp-money {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
   gap: 12px;
-  /* display: grid; */
-  /* grid-template-columns: 200px 94px; */
-  /* grid-template-rows: 32px 32px 106px; */
-  /* column-gap: 11px; */
 }
 
-.item-select .txt-remain {
+.inp-money .txt-remain {
   width: 200px;
-  height: 33px;
+  height: 32px;
   display: flex;
   padding: 6px 10px;
   justify-content: space-between;
@@ -112,10 +117,20 @@ p {
   background-color: #eae8fe;
   align-items: center;
 }
+
+.inp-money input {
+  font-size: 1.3rem;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #bdbdbd;
+  line-height: 19px;
+  border-radius: 5px;
+}
+
 .btn-return,
 .btn-put-money {
   width: 94px;
-  height: 33px;
+  height: 32px;
   font-size: 1.3rem;
   line-height: 18px;
   align-items: center;
@@ -123,62 +138,56 @@ p {
   border-radius: 5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
-.item-select .put-money {
+
+/* .inp-money .put-money {
   display: flex;
   gap: 12px;
-}
-.item-select input {
-  width: 200px;
-  padding: 6px 6px 5px;
-  border: 1px solid #bdbdbd;
-  line-height: 19px;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
+} */
 
 .pocket {
   display: flex;
   gap: 12px;
   margin-top: 12px;
 }
-.pocket .pocket-list {
-  overflow-y: auto;
+
+.pocket .cola-pocket {
+  overflow-y: scroll;
   width: 200px;
   height: 106px;
   display: flex;
   padding: 12px 0 12px 12px;
   flex-wrap: wrap;
-  gap: 6px;
-  /* padding: 6px 131px 8px 6px; */
   background-color: #eae8fe;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
 }
 
-input::placeholder{
-  color:#bdbdbd;
-  text-align: center;
-}
-.pocket .pocket-list::-webkit-scrollbar {
+.pocket .cola-pocket::-webkit-scrollbar,
+.get-list-item::-webkit-scrollbar {
   width: 12px;
   height: 100%;
 }
-.pocket .pocket-list::-webkit-scrollbar-thumb {
-  /* height: 79px; */
+
+.pocket .cola-pocket::-webkit-scrollbar-thumb,
+.get-list-item::-webkit-scrollbar {
+  height: 79px;
   background-clip: padding-box;
   background-color:#fff;
   border: 4px solid transparent;
   border-radius: 16px;
 }
-.pocket .pocket-list::-webkit-scrollbar-track {
+
+.pocket .cola-pocket::-webkit-scrollbar-track,
+.get-list-item::-webkit-scrollbar {
   background-color: #EAE8FE;
   border-radius: 5px;
 }
-/* .pocket-list {
+
+.pocket-list {
   flex-direction: column;
-  margin: 12px 10px 0 12px;
   padding-right: 4px;
-} */
+}
+
 .pocket-list li {
   width: 170px;
   height: 48.5px;
@@ -187,18 +196,22 @@ input::placeholder{
   padding: 8px 8px 8px 10px;
   background-color: #ffffff;
   border-radius: 5px;
+  margin-bottom: 6px;
 }
+
 .pocket-list img {
   width: 18px;
   border-radius: 0;
   margin-right: 10px;
 }
-/* .list_name {
+
+.list_name {
   font-size: 0.9rem;
   margin-left: 10px;
   margin-right: auto;
-} */
-/* .list_num {
+}
+
+.list_num {
   width: 30px;
   height: 30px;
   display: flex;
@@ -207,7 +220,7 @@ input::placeholder{
   font-size: 1.4rem;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
-} */
+}
 .pocket .btn-pocket {
   width: 94px;
   height: 106px;
@@ -220,51 +233,58 @@ input::placeholder{
 }
 
 /* 2. pick section 획득 음료 */
-/* .pick {
+.pick {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-} */
+}
+
 .pick {
   width: 360px;
 }
+
 .pick .money {
+  height: 50px;
   width: 360px;
-  /* display: flex; */
+  display: flex;
   padding: 9px 27px;
   margin-bottom: 20px;
   background-color: #ffffff;
-  /* margin-left: auto; */
+  margin-left: auto;
 }
+
 .pick .money p {
   display: flex;
+  width: 100%;
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 1.4rem;
-  line-height: 20px;
-  font-weight: 700;
   background-color: #eae8fe;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
 }
+
 .pick .txt-money {
   font-weight: 700;
 }
 
-.pick .get-list-box {
+.pick .cola-get {
+  width: 360px;
   height: 475px;
-  background-color: #ffffff;
-}
-.pick .get-list-box .txt-get-drink {
+  padding: 25px 27px 27px;
+  background-color: #fff;
+  box-sizing: border-box;
   text-align: center;
-  padding-top: 25px;
-  font-size: 1.4rem;
-  line-height: 20px;
-  font-weight: 700;
 }
 
-.pick .get-list-box .item-get-result-list {
+.cola-get h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.pick .get-list-item {
   width: 306px;
   height: 364px;
   margin: 13px auto 0;
@@ -272,9 +292,10 @@ input::placeholder{
   padding: 12px 0 0 12px;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
-.pick .get-list-box .item-get-result-list li {
+
+.pick .get-list-item .get-list li {
   width: 276px;
   height: 46px;
   padding: 6px 8px 7px 10px;
@@ -284,25 +305,30 @@ input::placeholder{
   display: flex;
   align-items: center;
 }
-.pick .get-list-box .item-get-result-list li img {
+
+.pick .get-list-item .get-list li img {
   width: 18px;
   border-radius: 0;
   margin-right: 10px;
 }
-.pick .get-list-box .item-get-result-list li:last-child {
+
+.pick .get-list-item .get-list li:last-child {
   margin-bottom: 0px;
 }
-.pick .get-list-box .get-total {
-  width: 306px;
-  margin: 6px auto 0;
-  text-align: right;
-  font-weight: 500;
+
+.pick .txt-total {
+  display: flex;
+  justify-content: right;
+  margin-top: 6px;
   font-size: 1.2rem;
-  line-height: 17px;
+  line-height: 20px;
 }
+
+
 @media screen and (max-width: 767px){
   body {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #bdbdbd;
   }
   .logo {
     margin-bottom: 18px;
