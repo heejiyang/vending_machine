@@ -46,6 +46,7 @@ p {
   gap: 12px;
 }
 
+/* 질문!! 자스 구현으로 없어진 태그를 살려둬야할까요?? */
 .list-item .item {
   width: 94px;
   cursor: pointer;
@@ -234,14 +235,11 @@ p {
 
 /* 2. pick section 획득 음료 */
 .pick {
+  width: 360px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.pick {
-  width: 360px;
 }
 
 .pick .money {
