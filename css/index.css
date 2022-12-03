@@ -189,21 +189,22 @@ p {
   padding-right: 4px;
 }
 
-.pocket-list li {
+.pocket-list button {
   width: 170px;
-  height: 48.5px;
+  height: 46px;
   display: flex;
   align-items: center;
   padding: 8px 8px 8px 10px;
   background-color: #ffffff;
   border-radius: 5px;
+  border: none;
   margin-bottom: 6px;
 }
 
 .pocket-list img {
   width: 18px;
   border-radius: 0;
-  margin-right: 10px;
+  margin-right: auto;
 }
 
 .list_name {
@@ -344,9 +345,6 @@ p {
     margin-right: 0;
     height: 535px;
     padding: 31px 27px 0 27px;
-  }
-  .pocket li {
-    border: 1px solid #bdbdbd;
   }
   /* 2. 획득 음료 */
   .pick {
