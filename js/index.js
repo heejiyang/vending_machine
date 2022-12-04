@@ -122,12 +122,24 @@ btnGet.addEventListener('click', (event) => {
   let got = false;
   let totalPrice = 0;
 
-  for (const got of cart.querySelectorAll('li')) {
+  for (const itemStacked of cart.querySelectorAll('li')) {
     for (const itemGot of getListItem.querySelectorAll('li')) {
-      let gotCount = got.querySelector('.list_num');
-      if ()
+      let gotCount = itemGot.querySelector('.list_num');
+      if (itemStacked.dataset.item === itemGot.dataset.item) {
+        gotCount.textContent = Math.floor(gotCount.textContent) + Math.floor(itemStacked.querySelector('.list_num').textContent);
+        got = true;
+        break;
+      }
+    }
+    if (!got) {
+      getListItem.appendChild(itemStacked);
     }
   }
-})
+  cart.innerHTML = null;
 
-// 총 금액
+  // 총 금액
+  getListItem.querySelectorAll('li').forEach((itemGot) => {
+    totalPrice += itemGot.dataset.price * Math.floor(itemGot.querySelector('.list_num').textContent);
+  })
+  totalMoney.textContent = `총금액 : ${totalPrice.toLocaleString()} 원`
+})
