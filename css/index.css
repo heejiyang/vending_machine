@@ -58,7 +58,7 @@ p {
   padding: 11px 12px 9px;
 }
 
-.list-item .item.active {
+.list-item .item:active {
   outline: 3px solid #6327FE;
 }
 
@@ -75,7 +75,7 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.8) url(../img/soldout.png) center/70% no-repeat;
+  background: rgba(0, 0, 0, 0.8) url(../img/Sold-out.png) center/70% no-repeat;
   border: none;
 }
 
@@ -294,7 +294,7 @@ p {
   overflow-y: scroll;
 }
 
-.pick .get-list-item .get-list li {
+.pick .get-list-item .get-list button {
   width: 276px;
   height: 46px;
   padding: 6px 8px 7px 10px;
