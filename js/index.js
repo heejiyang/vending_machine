@@ -138,7 +138,7 @@ btnGet.addEventListener('click', (event) => {
 
   // 총 금액
   getListItem.querySelectorAll('li').forEach((itemGot) => {
-    totalPrice += itemGot.dataset.price * (Math.floor(itemGot.querySelector('.list_num').textContent));
+    totalPrice += itemGot.dataset.price * ~~(itemGot.querySelector('.list_num').textContent);
   })
-  totalMoney.textContent = `총금액 : ${totalPrice.toLocaleString()} 원`
+  totalMoney.textContent = `총금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
 })
