@@ -89,6 +89,8 @@ btnItem.forEach((item) => {
 
       // 콜라 처음 선택했을 경우.
       if ( !stack ){
+        cartList.dataset.price = item.dataset.price;
+        cartList.dataset.item = item.dataset.item;
         cartList.innerHTML = `
           <button type="button" class="btn-cola-minus">
             <img src="./img/${item.dataset.img}" alt="${item.dataset.item}">
@@ -122,6 +124,7 @@ btnGet.addEventListener('click', (event) => {
   let totalPrice = 0;
 
   for (const itemStacked of cart.querySelectorAll('li')) {
+
     for (const itemGot of getListItem.querySelectorAll('li')) {
       let gotCount = itemGot.querySelector('.list_num');
       if (itemStacked.dataset.item === itemGot.dataset.item) {
@@ -139,6 +142,8 @@ btnGet.addEventListener('click', (event) => {
   // 총 금액
   getListItem.querySelectorAll('li').forEach((itemGot) => {
     totalPrice += itemGot.dataset.price * ~~(itemGot.querySelector('.list_num').textContent);
+    console.log(itemGot);
+    console.log(itemGot.dataset.price);
   })
   totalMoney.textContent = `총금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
-})
+});
