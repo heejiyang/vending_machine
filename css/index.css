@@ -326,7 +326,6 @@ p {
 @media screen and (max-width: 767px) {
   body {
     background-color: #fff;
-    /* background-color: #bdbdbd; */
   }
   .logo {
     margin-bottom: 18px;
