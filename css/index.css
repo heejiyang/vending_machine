@@ -1,5 +1,5 @@
 body {
-  background-color: #EAE8FE;
+  background-color: #eae8fe;
 }
 p {
   font-size: 0.9rem;
@@ -59,7 +59,7 @@ p {
 }
 
 .list-item .item:active {
-  outline: 3px solid #6327FE;
+  outline: 3px solid #6327fe;
 }
 
 .list-item .item.soldout {
@@ -75,7 +75,7 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.8) url(../img/Sold-out.png) center/70% no-repeat;
+  background: rgba(0, 0, 0, 0.8) url(../img/Sold-out.svg) center/70% no-repeat;
   border: none;
 }
 
@@ -95,7 +95,7 @@ p {
   font-size: 1.2rem;
   line-height: 12px;
   border-radius: 50px;
-  background-color: #6327FE;
+  background-color: #6327fe;
 }
 
 /* 왼쪽 하단부분 */
@@ -173,14 +173,14 @@ p {
 .get-list-item::-webkit-scrollbar {
   height: 79px;
   background-clip: padding-box;
-  background-color:#fff;
+  background-color: #fff;
   border: 4px solid transparent;
   border-radius: 16px;
 }
 
 .pocket .cola-pocket::-webkit-scrollbar-track,
 .get-list-item::-webkit-scrollbar {
-  background-color: #EAE8FE;
+  background-color: #eae8fe;
   border-radius: 5px;
 }
 
@@ -226,7 +226,7 @@ p {
 .pocket .btn-pocket {
   width: 94px;
   height: 106px;
-  background-color: #6327FE;
+  background-color: #6327fe;
   color: #ffffff;
   border-radius: 5px;
   font-weight: 700;
@@ -323,11 +323,10 @@ p {
   line-height: 20px;
 }
 
-
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
   body {
-    /* background-color: #fff; */
-    background-color: #bdbdbd;
+    background-color: #fff;
+    /* background-color: #bdbdbd; */
   }
   .logo {
     margin-bottom: 18px;
